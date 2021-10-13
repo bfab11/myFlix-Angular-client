@@ -1,0 +1,27 @@
+.mat-card {
+    height: 13em;
+    background-color: #def2f1d3;
+}
+
+.mat-card-header {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-card-subtitle {
+    text-align: center;
+}
+
+.card-content {
+    width: 19em;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text {
+    margin-left: auto;
+    margin-right: auto;
+}

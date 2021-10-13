@@ -1,0 +1,43 @@
+.mat-card {
+    margin: auto;
+    margin-top: 10em;
+    height: 30em;
+    width: 30em;
+    background-color: #2B7A78;
+}
+
+.mat-card-header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.mat-card-title {
+    margin-top: 3em;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+.mat-card-content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 2em;
+    margin-top: 1em;
+}
+
+.mat-card-actions {
+    margin-top: 10em;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.mat-button {
+    background-color: #def2f1d3;
+}
+
+.mat-card-subtitle {
+    font-weight: 600;
+    font-size: x-large;
+}

@@ -1,0 +1,47 @@
+.movie-container {
+    display: flex;
+    flex-direction: row;
+    margin: 100px 20px;
+}
+
+.mat-card {
+    width: 21em;
+    height: 33em;
+    margin: 1em;
+    background-color: #def2f1d3;
+}
+
+.mat-card-header {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mat-card-content {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-img {
+    width: 18em;
+    height: 24em;
+}
+
+.mat-card-actions {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.favorite-button {
+    float: right;
+    cursor: pointer;
+}
+
+.favorite-button-active {
+    float: right;
+    color: red;
+    cursor: pointer;
+}

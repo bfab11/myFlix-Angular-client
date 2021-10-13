@@ -1,0 +1,38 @@
+.mat-card {
+    height: 20em;
+    background-color: #def2f1d3;
+}
+
+.mat-card-header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 20%;
+}
+
+.mat-card-title {
+    font-size:xx-large;
+    margin-bottom: 2em;
+}
+
+.class-content {
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    padding: 1em;
+    margin: 0;
+    list-style: none;
+}
+
+.list-item-1 {
+    font-size:larger;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.list-item-2 {
+    font-size: larger;
+    padding: 10px;
+}
