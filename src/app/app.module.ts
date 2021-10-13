@@ -28,6 +28,9 @@ import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 import { FavoritesCardComponent } from './favorites-card/favorites-card.component';
 
+/**
+ * Set url routes
+*/
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },

@@ -8,6 +8,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class GenreCardComponent implements OnInit {
 
   constructor(
+
+    /**
+     * Uses inject to get Genre details
+    */
     @Inject(MAT_DIALOG_DATA)
     public data: {
       Name: string;

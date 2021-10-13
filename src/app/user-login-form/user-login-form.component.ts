@@ -11,7 +11,9 @@ import { Router } from '@angular/router';
 })
 export class UserLoginFormComponent implements OnInit {
 
-  // defines the component's input
+  /**
+   * Form inputs required for login
+  */
   @Input() userData = { Username: '', Password: '' };
 
   constructor(
@@ -24,6 +26,9 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Uses form details to login
+  */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
       localStorage.setItem('username', result.user.Username);

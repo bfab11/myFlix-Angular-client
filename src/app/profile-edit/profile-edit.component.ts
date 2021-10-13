@@ -12,6 +12,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProfileEditComponent implements OnInit {
 
+  /**
+   * Params for updating user, Username cannot be updated
+  */
   @Input() userData = {
     Username: '',
     Password: '',
@@ -28,6 +31,9 @@ export class ProfileEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Update user details
+  */
   editProfile(): void {
     this.fetchApiData.editUser(this.userData).subscribe((res) => {
       this.dialogRef.close();

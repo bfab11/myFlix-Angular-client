@@ -29,6 +29,9 @@ export class ProfileCardComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * Gets user details in order to display user information
+  */
   getUser(): void {
     let user = localStorage.getItem('username');
     this.fetchApiData.getUser(user).subscribe((res: any) => {
@@ -37,6 +40,9 @@ export class ProfileCardComponent implements OnInit {
     })
   }
 
+  /**
+   * Navigates to Profile Edit on click
+  */
   openEditProfileDialog(): void {
     this.dialog.open(ProfileEditComponent, {
       width: '500px'

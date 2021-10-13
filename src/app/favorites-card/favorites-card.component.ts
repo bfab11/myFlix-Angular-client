@@ -37,7 +37,7 @@ export class FavoritesCardComponent implements OnInit {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       console.log('movies', this.movies);
-      return this.filterFavorites();
+      return this.filterFavorites(); // calls the filter function to only show favorites when calling movies
     })
   }
 
@@ -49,6 +49,10 @@ export class FavoritesCardComponent implements OnInit {
     })
   }
 
+  /**
+   * Filters movies to display only the users favorites
+  */
+
   filterFavorites(): void {
     this.movies.forEach((movie:any) => {
       if (this.favs.includes(movie._id)) {
@@ -58,6 +62,10 @@ export class FavoritesCardComponent implements OnInit {
     return this.favorites;
   }
 
+  /**
+   * Adds the movie to the user's favorites list
+   */
+
   addToUserFavorites(id: string, Title: string): void {
     this.fetchApiData.addToFavorites(id).subscribe((resp: any) => {
       this.snackBar.open(`${Title} has been added to your favorites!`, 'OK', {
@@ -66,6 +74,10 @@ export class FavoritesCardComponent implements OnInit {
       return this.getUsersFavs();
     })
   }
+
+  /**
+   * Removes the movie to the user's favorites list
+   */
 
   removeFromUserFavorites(id: string, Title: string): void {
     this.fetchApiData.removeFromFavorites(id).subscribe((resp: any) => {
@@ -98,6 +110,10 @@ export class FavoritesCardComponent implements OnInit {
       width: '500px'
     });
   }
+
+  /**
+   * Allows for dynamic loading of favorites icon to display on/off of favorites
+  */
 
   setFavStatus(id: any): any {
     if (this.favs.includes(id)) {

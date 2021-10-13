@@ -24,20 +24,32 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Oepns User profile card on click
+  */
   openUserProfile(): void {
     this.dialog.open(ProfileCardComponent, {
       width: '500px'
     });
   }
 
+  /**
+   * Navigates to movie list on click
+  */
   openAllMovies(): void {
     this.router.navigate(['movies']);
   }
 
+  /**
+   * Navigates to user's favorite movies list on click
+  */
   openFavorites(): void {
     this.router.navigate(['favorites'])
   }
 
+  /**
+   * Logs out user on click
+  */
   logOut(): void {
     this.router.navigate(['welcome']);
     this.snackBar.open('Logout successful', 'OK', {

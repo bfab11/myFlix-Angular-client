@@ -30,6 +30,9 @@ export class MovieCardComponent implements OnInit {
     this.getMovies();
   }
 
+  /**
+   * Get all Movies
+  */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -38,6 +41,9 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Returns a list of the users favorites movie._id's
+  */
   getUsersFavs(): void {
     this.fetchApiData.getUser(user).subscribe((resp:any) => {
       this.favs = resp.FavoriteMovies;
@@ -46,6 +52,11 @@ export class MovieCardComponent implements OnInit {
     })
   }
 
+  /**
+   * Opens genre details in a MatDialog modal 
+   * @param Name Genre name
+   * @param Description genre description
+  */
   openGenre(Name:string, Description:string): void {
     this.dialog.open(GenreCardComponent, {
       data: {Name, Description},
@@ -54,6 +65,13 @@ export class MovieCardComponent implements OnInit {
     console.log(Name, Description);
   }
 
+  /**
+   * Opens Director details in a MatDialog modal 
+   * @param Name director name
+   * @param Description director bio
+   * @param Birth director birthyear
+   * @param Death director deathyear (if applicable)
+  */
   openDirector(Name:string, Description:string, Birth:number, Death:number): void {
     this.dialog.open(DirectorCardComponent, {
       data: {Name, Description, Birth, Death},
@@ -62,6 +80,12 @@ export class MovieCardComponent implements OnInit {
     console.log(Name, Description, Birth, Death);
   }
 
+  /**
+   * Opens movie synopsis modal with Title, description and poster
+   * @param Title movie title
+   * @param Description movie description
+   * @param ImagePath poster of the movie
+  */
   openSynopsis(Title:string, ImagePath:any, Description:string): void {
     this.dialog.open(SynopsisCardComponent, {
       data: {Title, ImagePath, Description},
@@ -69,6 +93,9 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Adds movie to users favorites list
+  */
   addToUserFavorites(id:string, Title:string): void {
     this.fetchApiData.addToFavorites(id).subscribe((resp: any) => {
       this.snackBar.open(`${Title} has been added to your favorites!`, 'OK', {
@@ -78,6 +105,9 @@ export class MovieCardComponent implements OnInit {
       return this.getUsersFavs();
   }
 
+  /**
+   * Removed movie from users favorites list
+  */
   removeFromUserFavorites(id:string, Title:string): void {
     this.fetchApiData.removeFromFavorites(id).subscribe((resp:any) => {
       this.snackBar.open(`${Title} has been removed from your favorites!`, 'OK', {
@@ -86,6 +116,9 @@ export class MovieCardComponent implements OnInit {
       return this.getUsersFavs();
   }
 
+  /**
+   * Compares movie id's with getUsersFavs returned list to set the Favorites icon to add/remove correctly
+  */
   setFavStatus(id: any): any {
     if (this.favs.includes(id)) {
       return true;
