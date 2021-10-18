@@ -133,7 +133,7 @@ export class FetchApiDataService {
     */
     editUser(userData: any): Observable<any> {
       const token = localStorage.getItem('token');
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
       return this.http.put(apiUrl + `users/${username}`, userData, {headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
@@ -165,7 +165,7 @@ export class FetchApiDataService {
     */
     getFavorites(): Observable<any> {
       const token = localStorage.getItem('token');
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
       return this.http.get(apiUrl + `users/${username}/favorites`, {headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
@@ -183,9 +183,9 @@ export class FetchApiDataService {
     */
     addToFavorites(id: string): Observable<any> {
       const token = localStorage.getItem('token');
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
       console.log('TESTING');
-      return this.http.post(apiUrl + `users/${username}/favorites/${id}`, id, {headers: new HttpHeaders(
+      return this.http.post(apiUrl + `users/${username}/favorites/${id}`, null, {headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
         })}).pipe(
@@ -201,7 +201,7 @@ export class FetchApiDataService {
     */
     removeFromFavorites(id: string): Observable<any> {
       const token = localStorage.getItem('token');
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
       return this.http.delete(apiUrl + `users/${username}/favorites/${id}`, {headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,

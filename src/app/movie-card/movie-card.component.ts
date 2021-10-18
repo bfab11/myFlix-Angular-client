@@ -45,6 +45,7 @@ export class MovieCardComponent implements OnInit {
    * Returns a list of the users favorites movie._id's
   */
   getUsersFavs(): void {
+    console.log(user, 'getUsersFavs');
     this.fetchApiData.getUser(user).subscribe((resp:any) => {
       this.favs = resp.FavoriteMovies;
       console.log(this.getUsersFavs, 'favorite movies');
